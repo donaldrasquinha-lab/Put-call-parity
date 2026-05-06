@@ -18,10 +18,6 @@ github_status = "🟢 Linked" if st.session_state.github_connected else "🔴 Un
 c1.info(f"**Upstox:** {upstox_status}")
 c2.info(f"**GitHub Repo:** {github_status}")
 
-# --- THE CONNECT BUTTON ---
-with st.sidebar:
-    st.header("🔗 System Integration")
-
 # Use this updated block inside your button logic
 github_url = f"https://raw.githubusercontent.com/{github_user_repo}/main/nifty50_upstox_keys.csv"
 try:
@@ -36,6 +32,9 @@ try:
 except Exception as e:
     st.error(f"Connection failed: {str(e)}")
 
+# --- THE CONNECT BUTTON ---
+with st.sidebar:
+    st.header("🔗 System Integration")
     # Input fields for configuration
     upstox_api_key = st.text_input("Upstox API Key", type="password")
     github_user_repo = st.text_input("GitHub Path (user/repo)", value="your-name/nifty-scanner")
