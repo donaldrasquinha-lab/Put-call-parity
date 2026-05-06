@@ -33,7 +33,7 @@ try:
         st.error(f"File not found at: {github_url}. Check your file name!")
     else:
         st.error(f"GitHub returned error code: {res.status_code}")
- except Exception as e:
+except Exception as e:
     st.error(f"Connection failed: {str(e)}")
 
     # Input fields for configuration
