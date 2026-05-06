@@ -21,7 +21,8 @@ c2.info(f"**GitHub Repo:** {github_status}")
 # --- THE CONNECT BUTTON ---
 with st.sidebar:
     st.header("🔗 System Integration")
-    # Use this updated block inside your button logic
+
+# Use this updated block inside your button logic
 github_url = f"https://githubusercontent.com{github_user_repo}/main/nifty50_upstox_keys.csv"
 
 try:
