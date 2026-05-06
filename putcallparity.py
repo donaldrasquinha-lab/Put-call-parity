@@ -21,7 +21,21 @@ c2.info(f"**GitHub Repo:** {github_status}")
 # --- THE CONNECT BUTTON ---
 with st.sidebar:
     st.header("🔗 System Integration")
-    
+    # Use this updated block inside your button logic
+github_url = f"https://githubusercontent.com{github_user_repo}/main/nifty50_upstox_keys.csv"
+
+try:
+    res = requests.get(github_url, timeout=5)
+    if res.status_code == 200:
+        st.session_state.github_connected = True
+        st.success("GitHub linked successfully!")
+    elif res.status_code == 404:
+        st.error(f"File not found at: {github_url}. Check your file name!")
+    else:
+        st.error(f"GitHub returned error code: {res.status_code}")
+except Exception as e:
+    st.error(f"Connection failed: {str(e)}")
+
     # Input fields for configuration
     upstox_api_key = st.text_input("Upstox API Key", type="password")
     github_user_repo = st.text_input("GitHub Path (user/repo)", value="your-name/nifty-scanner")
