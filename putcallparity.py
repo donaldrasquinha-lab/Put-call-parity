@@ -23,7 +23,7 @@ with st.sidebar:
     st.header("🔗 System Integration")
 
 # Use this updated block inside your button logic
-github_url = f"https://githubusercontent.com/{github_user_repo}/main/nifty50_upstox_keys.csv"
+github_url = f"https://raw.githubusercontent.com/{github_user_repo}/main/nifty50_upstox_keys.csv"
 try:
     res = requests.get(github_url, timeout=5)
     if res.status_code == 200:
