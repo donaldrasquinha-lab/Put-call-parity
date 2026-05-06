@@ -23,9 +23,9 @@ with st.sidebar:
     st.header("🔗 System Integration")
 
 # Use this updated block inside your button logic
-github_url = f"https://githubusercontent.com{github_user_repo}/main/nifty50_upstox_keys.csv"
+ github_url = f"https://githubusercontent.com{github_user_repo}/main/nifty50_upstox_keys.csv"
 
-try:
+ try:
     res = requests.get(github_url, timeout=5)
     if res.status_code == 200:
         st.session_state.github_connected = True
@@ -34,7 +34,7 @@ try:
         st.error(f"File not found at: {github_url}. Check your file name!")
     else:
         st.error(f"GitHub returned error code: {res.status_code}")
-except Exception as e:
+ except Exception as e:
     st.error(f"Connection failed: {str(e)}")
 
     # Input fields for configuration
