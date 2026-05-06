@@ -34,7 +34,7 @@ with st.sidebar:
         
         # 3a. Verify GitHub Connection (Logic moved INSIDE the button)
         # We use 'raw' to get the actual file data
-        github_url = f"https://githubusercontent.com{github_user_repo}/main/nifty50_upstox_keys.csv"
+        github_url = f"https://githubusercontent.com/{github_user_repo}/main/nifty50_upstox_keys.csv"
         
         try:
             res = requests.get(github_url, timeout=5)
