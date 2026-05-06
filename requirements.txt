@@ -1,6 +1,5 @@
 streamlit
 pandas
 numpy
-requests
-upstox-client
+upstox-python-sdk
 websockets
